@@ -1,0 +1,78 @@
+@charset "utf-8";
+
+/* monte_datepicker */
+.monte-datepicker-wrap{position:relative;z-index:30;}
+.monte-datepicker-wrap *{white-space:nowrap;}
+.monte-calendar-area{display:block;position:absolute;z-index:50;border:1px solid #d6e0eb;border-radius:16px;background-color:#eef2f7;}
+.monte-calendar-area .calendar-wrap{}
+.monte-calendar-area *:focus{box-shadow:none;outline-offset:-4px;outline:2px solid #246beb;}
+
+/* head */
+.monte-calendar-area .calendar-head{display:flex;justify-content:center;align-items:center;padding:24px;}
+.monte-calendar-area .btn-cal-move{display:flex;justify-content:center;align-items:center;width:32px;height:32px;border:1px solid #cdd1d5;border-radius:50%;background-color:#fff;font-size:0;line-height:normal;}
+.monte-calendar-area .btn-cal-move:before{display:block;flex:1 0 auto;width:20px;height:20px;background:url(../images/guide/ico_angle.svg) center/20px auto no-repeat;}
+.monte-calendar-area .btn-cal-move.prev:before{transform:rotate(90deg);}
+.monte-calendar-area .btn-cal-move.next:before{transform:rotate(-90deg);}
+.monte-calendar-area .calendar-switch-wrap{display:flex;margin:0 auto;}
+.monte-calendar-area .calendar-drop-down{position:relative;margin-right:16px;}
+.monte-calendar-area .calendar-drop-down:last-child{margin-right:0;}
+.monte-calendar-area .btn-cal-switch{display:flex;align-items:center;font-size:17px;font-weight:700;}
+.monte-calendar-area .btn-cal-switch:after{display:block;width:20px;height:20px;background:url(../images/guide/ico_angle.svg) center/18px auto no-repeat;margin-left:4px;}
+.monte-calendar-area .btn-cal-switch.year{}
+.monte-calendar-area .btn-cal-switch.month{}
+.monte-calendar-area .calendar-select{visibility:hidden;overflow:hidden;position:absolute;top:calc(100% + 8px);left:0;left:50%;z-index:10;width:140px;height:0;border:1px solid #cdd1d5;border-radius:8px;background-color:#fff;color:#1d1d1d;transition:.25s ease-in-out;transform:translateX(-50%);opacity:0;}
+.monte-calendar-area .calendar-select.active{visibility:visible;overflow-y:auto;height:256px;opacity:1;}
+.monte-calendar-area .sel{overflow-x:hidden;overflow-y:auto;width:100%;height:100%;padding:4px 8px;}
+.monte-calendar-area .sel.year{}
+.monte-calendar-area .sel.mon{}
+.monte-calendar-area .sel li{width:100%;}
+.monte-calendar-area .sel button{width:100%;padding:4px 16px;font-weight:400;text-align:center;white-space:nowrap;}
+
+/* body */
+.monte-calendar-area .calendar-body{position:relative;padding:0 16px;}
+.monte-calendar-area .calendar-body table{}
+.monte-calendar-area .calendar-body table caption{display:block;position:absolute;top:40px;left:16px;width:auto;height:auto;color:#1d1d1d;font-size:15px;font-weight:600;line-height:normal;text-indent:0;}
+.monte-calendar-area .calendar-body thead th{padding-bottom:40px;font-size:15px;font-weight:400;}
+.monte-calendar-area .calendar-body td{position:relative;margin:0;padding:0;padding:2px 0;border:none;color:#1d1d1d;font-size:17px;font-weight:400;}
+.monte-calendar-area .calendar-body td:first-child{color:#bd2c0f;}
+.monte-calendar-area .calendar-body td:last-child{color:#1e90ff;}
+.monte-calendar-area .calendar-body td.old:not(.selectDate):not(.startDate):not(.endDate),.monte-calendar-area .calendar-body td.next:not(.selectDate):not(.startDate):not(.endDate){color:#8a949e;}
+.monte-calendar-area .calendar-body td.startDate,.monte-calendar-area .calendar-body td.endDate,.monte-calendar-area .calendar-body td.selectDate{color:#fff;font-weight:700;}
+.monte-calendar-area .calendar-body td:before{display:block;position:absolute;top:2px;right:0;bottom:2px;left:0;z-index:-1;opacity:1;}
+.monte-calendar-area .calendar-body td.startDate:before{border-radius:30px 0 0 30px;background-color:#063a74;}
+.monte-calendar-area .calendar-body td.endDate:before{border-radius:0 30px 30px 0;background-color:#063a74;}
+.monte-calendar-area .calendar-body td.selectDate:before{border-radius:50%;background-color:#063a74;}
+.monte-calendar-area .calendar-body td.rangeDate:before{background-color:#fff;}
+.monte-calendar-area .calendar-body td.today:after{display:block;position:absolute;bottom:8px;left:calc(50% - 2px);z-index:-1;width:4px;height:4px;border-radius:50%;background-color:#d63d4a;}
+.monte-calendar-area .calendar-body td button{display:block;position:relative;width:44px;height:44px;border-radius:50%;}
+.monte-calendar-area .calendar-body td.startDate button:focus,
+.monte-calendar-area .calendar-body td.endDate button:focus,
+.monte-calendar-area .calendar-body td.selectDate button:focus{outline-color:#fff}
+
+/* footer */
+.monte-calendar-area .calendar-footer{padding:16px 24px;border-radius:0 0 16px 16px;border-top:1px solid #d6e0eb;background-color:#fff;}
+.monte-calendar-area .calendar-btn-wrap{display:flex;align-items:center;}
+.monte-calendar-area .footer-btn{display:flex;align-items:center;height:40px;padding:12px;border:1px solid transparent;border-radius:6px;color:#1d1d1d;font-size:15px;line-height:normal;letter-spacing:0;margin-right:8px;}
+.monte-calendar-area .footer-btn:last-child{margin-right:0;}
+.monte-calendar-area .footer-btn.today{height:auto;margin-right:auto;padding:0;border-radius:0;}
+.monte-calendar-area .footer-btn.tertiary{border-color:#58616a;}
+.monte-calendar-area .footer-btn.primary{border-color:#256ef4;background-color:#256ef4;color:#fff;}
+.monte-calendar-area .footer-btn.primary:focus{outline-color:#fff;}
+@media all and (max-width: 768px){
+.monte-calendar-area .calendar-body table caption{font-size:15px !important;}
+}
+@media all and (max-width:640px){
+.monte-calendar-area .calendar-head{padding:16px;}
+.monte-calendar-area .btn-cal-move{width:30px;height:30px;}
+.monte-calendar-area .btn-cal-move:before{background-size:16px auto;}
+.monte-calendar-area .calendar-switch-wrap{}
+.monte-calendar-area .btn-cal-switch{font-size:15px;}
+.monte-calendar-area .btn-cal-switch:after{width:16px;height:16px;background-size:16px auto;}
+.monte-calendar-area .calendar-body table caption{font-size:13px !important;top:30px}
+.monte-calendar-area .calendar-body table thead th{font-size:13px;padding-bottom:24px;}
+.monte-calendar-area .calendar-body table tbody td{font-size:15px;height:0;}
+.monte-calendar-area .calendar-body td.today:after{width:2px;height:2px;left:calc(50% - 1px);bottom:6px;}
+.monte-calendar-area .calendar-body td button{width:30px;height:30px;}
+.monte-calendar-area .calendar-footer{padding:16px;}
+.monte-calendar-area .footer-btn{height:36px;font-size:15px;}
+}

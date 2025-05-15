@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./js/monte_datepick.js"></script>
+    <link rel="stylesheet" href="./css/monte_datepicker.css" />
+    <style>
+        body{display:block;min-height:800px;background-color:#fff;padding:50px 120px;}
+        .test{display:inline-flex;gap:8px;font-size:15px;align-items:center;border:1px solid #1b1b1b;border-radius:6px;}
+        .test .split{padding:0 16px;}
+        .test input{width:100px;border:none;}
+        .test button{height:40px;padding:0 16px;background-color:#fff;border:none;border-left:1px solid #1b1b1b;border-radius:0 6px 6px 0;}
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="test">
+        <input type="text" name="" id="" />
+        <span class="split">-</span>
+        <input type="text" name="" id="" />
+        <button type="button">달력열기</button>
+    </div>
+    <script>
+        document.querySelector('.test').monte_datepicker({
+
+        });
+    </script>
+</body>
+</html>
