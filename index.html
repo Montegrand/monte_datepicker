@@ -71,19 +71,19 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="test">
+    <div class="test date1">
         <input type="text" name="" id="" />
         <button type="button">달력열기</button>
     </div>
-    <div class="test2">
+    <div class="test date2">
         <input type="text" name="" id="" />
         <span class="split">-</span>
         <input type="text" name="" id="" />
         <button type="button">달력열기</button>
     </div>
     <script>
-        document.querySelector('.test').monte_datepicker();
-        document.querySelector('.test2').monte_datepicker({
+        document.querySelector('.date1').monte_datepicker();
+        document.querySelector('.date2').monte_datepicker({
             dateFormat: yyyy.mm.dd,
             yearRange: 10,
         });
