@@ -33,7 +33,7 @@ function Monte_Datepick(ele, option){
         settings = {
             dateFormat: option.dateFormat || 'yyyy-mm-dd',
             classNm: {
-                areaClass: option.areaClass || 'neo-calendar-area',
+                areaClass: option.areaClass || 'monte-calendar-area',
                 wrapClass: option.wrapClass || 'calendar-wrap',
                 headClass: option.headClass || 'calendar-head',
                 bodyClass: option.bodyClass || 'calendar-body',
@@ -121,7 +121,7 @@ function Monte_Datepick(ele, option){
         Position();
     });
 
-    _this.classList.add('neo-datepicker-wrap');
+    _this.classList.add('monte-datepicker-wrap');
 
     function init(){
         var date = new Date();
