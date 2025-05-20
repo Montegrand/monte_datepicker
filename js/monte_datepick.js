@@ -15,18 +15,18 @@ if (!Element.prototype.closest) {
 };
 
 if(window.jQuery){
-    $.fn.neo_datepicker = function(opt){
+    $.fn.monte_datepicker = function(opt){
         return this.each(function(){
-            MonteDatepick(this, opt);
+            Monte_Datepick(this, opt);
         });
     };
 };
 
-HTMLElement.prototype.neo_datepicker = function(opt){
-    MonteDatepick(this, opt);
+HTMLElement.prototype.monte_datepicker = function(opt){
+    Monte_Datepick(this, opt);
 };
 
-function MonteDatepick(ele, option){
+function Monte_Datepick(ele, option){
     option = option || {};
     var isjQuery = typeof jQuery !== 'undefined' && ele instanceof jQuery;
     var _this = _this = isjQuery ? ele[0] : ele,
