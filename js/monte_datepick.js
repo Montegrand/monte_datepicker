@@ -15,14 +15,14 @@ if (!Element.prototype.closest) {
 };
 
 if(window.jQuery){
-    $.fn.monte_datepicker = function(opt){
+    $.fn.neo_datepicker = function(opt){
         return this.each(function(){
             MonteDatepick(this, opt);
         });
     };
 };
 
-HTMLElement.prototype.monte_datepicker = function(opt){
+HTMLElement.prototype.neo_datepicker = function(opt){
     MonteDatepick(this, opt);
 };
 
@@ -33,7 +33,7 @@ function MonteDatepick(ele, option){
         settings = {
             dateFormat: option.dateFormat || 'yyyy-mm-dd',
             classNm: {
-                areaClass: option.areaClass || 'monte-calendar-area',
+                areaClass: option.areaClass || 'neo-calendar-area',
                 wrapClass: option.wrapClass || 'calendar-wrap',
                 headClass: option.headClass || 'calendar-head',
                 bodyClass: option.bodyClass || 'calendar-body',
@@ -77,10 +77,9 @@ function MonteDatepick(ele, option){
             var valArr = val.split(settings.dateDeli);
 
             if(valArr[1] && valArr[1]>12){
-                window.alert('"월"은 최대 12월 을 넘길 수 없습니다.');
+                valArr[1] = '0'+(valArr[1].split('')).join('.');
                 valArr.pop();
-                valArr.pop();
-                val = valArr.join(settings.dateDeli);
+                val = valArr.join('.');
                 return input.value = val;
             };
             if(valArr[2]){
